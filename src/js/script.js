@@ -173,6 +173,18 @@ class App {
 
     form.classList.remove('hidden');
     inputDistance.focus();
+
+    // Set the values to the values of the workout to make it more clear
+    // which workout is being edited
+    if (this.#currWorkoutEditing.type !== inputType.value) {
+      inputType.value = this.#currWorkoutEditing.type;
+      this._toggleElevationField();
+    }
+    inputDistance.value = this.#currWorkoutEditing.distance;
+    inputDuration.value = this.#currWorkoutEditing.duration;
+    this.#currWorkoutEditing.type === 'running'
+      ? (inputCadence.value = this.#currWorkoutEditing.cadence)
+      : (inputElevation.value = this.#currWorkoutEditing.elevationGain);
   }
 
   _hideForm() {
