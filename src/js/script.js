@@ -84,6 +84,7 @@ class App {
 
     // Attach event handlers
     form.addEventListener('submit', this._handleWorkout.bind(this));
+    form.addEventListener('load', () => (inputType.value = 'running'));
     btnCloseForm.addEventListener('click', this._hideForm.bind(this));
     inputType.addEventListener('change', this._toggleElevationField);
     containerWorkouts.addEventListener('click', this._moveToPopup.bind(this));
@@ -158,6 +159,11 @@ class App {
   _showForm(mapE) {
     this.#mapEvent = mapE;
     form.classList.remove('hidden');
+
+    !inputCadence.closest('.form__row').classList.contains('hidden')
+      ? (inputType.value = 'running')
+      : (inputType.value = 'cycling');
+
     inputDistance.focus();
   }
 
