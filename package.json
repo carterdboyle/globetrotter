@@ -1,0 +1,15 @@
+{
+  "name": "globetrotter",
+  "version": "1.0.0",
+  "description": "Plot exercises on a real-world map",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "Carter Boyle",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.13.2"
+  }
+}

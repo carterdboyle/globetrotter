@@ -1,5 +1,7 @@
 'use strict';
 
+import icon from 'url:../img/pencil.png';
+
 class Workout {
   date = new Date();
   id = (Date.now() + '').slice(-10);
@@ -335,7 +337,7 @@ class App {
         <h2 class="workout__title">${workout.description}</h2>
         <div class="workout__btn--container">
           <button class="btn workout__btn--edit" type="button">
-            <img class="edit_button_image" src="src/img/pencil.png" alt="edit">
+            <img class="edit_button_image" src="${icon}" alt="edit">
           </button>
           <button class="btn workout__btn--close" type="button">&times</button>
         </div>
